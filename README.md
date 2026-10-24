@@ -1,4 +1,4 @@
-# Does Causality Pay Off? Evaluating a Causal-Inspired Workflow in Software Optimization
+# Do Causal-Inspired Optimizers Improve Optimization Quality and Consistency? A Negative Result in Software Optimization
 
 > **Anonymous submission for SANER 2027 RENE** — Author information withheld for double-anonymous review.
 
