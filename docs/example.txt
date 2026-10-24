@@ -1,0 +1,49 @@
+Best Setting: [1, 0, 1, 0, 1, 1, 64, 2, 256],	Score: 94
+Best Setting: [1, 0, 1, 1, 0, 0, 64, 32, 256],	Score: 98
+Best Setting: [1, 0, 1, 1, 0, 0, 256, 32, 256],	Score: 91
+Best Setting: [1, 0, 0, 1, 1, 1, 256, 2, 4096],	Score: 89
+Best Setting: [1, 0, 1, 0, 1, 0, 128, 32, 1024],	Score: 90
+Best Setting: [1, 0, 0, 0, 0, 1, 64, 8, 4096],	Score: 91
+Best Setting: [1, 0, 0, 1, 1, 0, 64, 8, 1024],	Score: 62
+Best Setting: [1, 0, 1, 1, 1, 0, 128, 32, 4096],	Score: 95
+Best Setting: [1, 0, 1, 0, 0, 1, 64, 8, 4096],	Score: 94
+Best Setting: [1, 0, 1, 0, 1, 0, 64, 2, 4096],	Score: 91
+Best Setting: [1, 0, 1, 1, 0, 0, 256, 32, 256],	Score: 68
+Best Setting: [1, 0, 1, 0, 1, 0, 128, 32, 256],	Score: 92
+Best Setting: [1, 0, 1, 1, 0, 0, 128, 32, 1024],	Score: 94
+Best Setting: [1, 0, 1, 1, 0, 1, 256, 2, 4096],	Score: 99
+Best Setting: [1, 0, 1, 1, 1, 0, 256, 32, 256],	Score: 89
+Best Setting: [1, 0, 0, 1, 0, 0, 128, 2, 4096],	Score: 97
+Best Setting: [1, 0, 0, 0, 0, 1, 256, 32, 4096],	Score: 97
+Best Setting: [1, 0, 1, 1, 0, 1, 256, 32, 256],	Score: 98
+Best Setting: [1, 0, 1, 1, 1, 1, 256, 32, 4096],	Score: 91
+Best Setting: [1, 1, 0, 0, 0, 0, 128, 32, 1024],	Score: 61
+
+
+Sample Decision Tree:
+n:  33   win:   12     if SharedBuffers > 64
+n:  10   win:    5     |  if TempBuffers <= 2
+n:   5   win:    2     |  |  if SharedBuffers > 128;
+n:   5   win:    7     |  |  if SharedBuffers <= 128;
+n:  23   win:   15     |  if TempBuffers > 2
+n:  16   win:    8     |  |  if WorkMem > 256
+n:   6   win:    0     |  |  |  if SharedBuffers <= 128
+n:   3   win:    0     |  |  |  |  if trackActivities == 0;
+n:   3   win:    1     |  |  |  |  if trackActivities != 0;
+n:  10   win:   13     |  |  |  if SharedBuffers > 128
+n:   3   win:    6     |  |  |  |  if TempBuffers > 8;
+n:   7   win:   16     |  |  |  |  if TempBuffers <= 8
+n:   4   win:    2     |  |  |  |  |  if fsync == 0;
+n:   3   win:   34     |  |  |  |  |  if fsync != 0;
+n:   7   win:   30     |  |  if WorkMem <= 256
+n:   4   win:    2     |  |  |  if fsync == 0;
+n:   3   win:   66     |  |  |  if fsync != 0;
+n:  17   win:   36     if SharedBuffers <= 64
+n:   9   win:   25     |  if TempBuffers > 8
+n:   5   win:   23     |  |  if WorkMem > 1024;
+n:   4   win:   29     |  |  if WorkMem <= 1024;
+n:   8   win:   47     |  if TempBuffers <= 8
+n:   4   win:   42     |  |  if WorkMem > 1024;
+n:   4   win:   52     |  |  if WorkMem <= 1024;
+
+Used:  SharedBuffers TempBuffers WorkMem fsync trackActivities

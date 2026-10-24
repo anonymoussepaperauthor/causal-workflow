@@ -1,0 +1,5 @@
+trt, perf-rmse , stab-std, best_perf, best_stab, runtimes
+ezr, 46.06, 33.94, 1, 0, 1.05
+ezr-cf, 46.06, 33.94, 1, 0, 7.18
+cs, 20.91, 5.93, 1, 1, 2.50
+cs-cf, 20.91, 5.93, 1, 1, 8.79
